@@ -19,13 +19,36 @@ const CustomNav = ({ claim }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link className={`nav-link ${location.pathname === "/menu" ? "active" : ""}`} to="/menu">
+            <Link
+              className={`nav-link ${
+                location.pathname === "/home" ? "active" : ""
+              }`}
+              to="/"
+            >
+              Home
+            </Link>
+            <Link
+              className={`nav-link ${
+                location.pathname === "/menu" ? "active" : ""
+              }`}
+              to="/menu"
+            >
               Menu
             </Link>
-            <Link className={`nav-link ${location.pathname === "/reservations" ? "active" : ""}`} to="/reservations">
+            <Link
+              className={`nav-link ${
+                location.pathname === "/reservations" ? "active" : ""
+              }`}
+              to="/reservations"
+            >
               Prenotazioni
             </Link>
-            <Link className={`nav-link ${location.pathname === "/book-table" ? "active" : ""}`} to="/book-table">
+            <Link
+              className={`nav-link ${
+                location.pathname === "/book-table" ? "active" : ""
+              }`}
+              to="/book-table"
+            >
               Prenota un tavolo
             </Link>
           </Nav>

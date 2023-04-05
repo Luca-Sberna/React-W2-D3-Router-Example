@@ -1,11 +1,11 @@
-import { Container, Row, Col, Card, Badge } from "react-bootstrap";
+import { Container, Row, Col, Card, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import menu from "../data/menu.json";
 
 const Menu = () => {
   return (
     <Container className="mt-5">
-      {menu.map(pasta => (
+      {menu.map((pasta) => (
         <Row className="justify-content-center" key={pasta.id}>
           <Col xs={12} md={6}>
             <Card className="mb-4">
@@ -14,7 +14,10 @@ const Menu = () => {
                   <Card.Img variant="top" src={pasta.image} className="mb-3" />
                 </Link>
                 <Card.Title>
-                  <Link to={"/detail/" + pasta.id} className="text-dark text-decoration-none">
+                  <Link
+                    to={"/detail/" + pasta.id}
+                    className="text-dark text-decoration-none"
+                  >
                     {pasta.name}
                   </Link>
                 </Card.Title>
@@ -23,6 +26,11 @@ const Menu = () => {
               <Card.Footer>
                 <Badge bg="danger">{pasta.label}</Badge>
                 <Badge bg="success">{pasta.price}</Badge>
+                <Link to={"/detail/" + pasta.id}>
+                  <Button variant="dark" className="w-100">
+                    Vai a {pasta.name}
+                  </Button>
+                </Link>
               </Card.Footer>
             </Card>
           </Col>
